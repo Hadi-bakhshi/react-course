@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+}
+
+/* .change-btn {
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20.0px );
+-webkit-backdrop-filter: blur( 20.0px );
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+color: black;
+  padding: 10px 10px;
+  
+} */
