@@ -1,8 +1,8 @@
 .product {
   
-  border: 1px solid #ccc;
+
   border-radius: 10px;
-  padding: 20px 15px;
+  padding: 20px 25px;
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(20px);
@@ -11,7 +11,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   justify-content: space-between;
-  width: 45rem;
+  width: 100%;
   margin-top: 15px;
   margin-bottom: 15px;
 color: #444;
@@ -23,6 +23,7 @@ color: #444;
   border-radius: 5px;
   outline: none;
   padding: 5px 10px;
+  margin: 0 5px;
   cursor: pointer;
 }
 .inc{
@@ -43,4 +44,18 @@ color: #444;
   justify-content: center;
   align-items: center;
   font-size: 14px;
+  margin-right: 5px;
+  /* margin-top: 10px; */
+}
+.input{
+  outline: none;
+  border: 1px solid #6d28d9;
+  border-radius: 5px;
+  padding: 5px 2px;
+  color: #6d28d9;
+  width: 20%;
+  text-align: center;
+}
+.input:focus{
+  border: 2px solid #6d28d9;
 }
