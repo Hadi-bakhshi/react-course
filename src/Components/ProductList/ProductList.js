@@ -9,12 +9,14 @@ class ProductList extends Component {
         { title: "Node.js", price: "$89", id:2, quantity:2 },
         { title: "JavaScript", price: "$79", id:3, quantity:3 },
       ],
+      
   };
 
 removeHandler = (id) =>{
   console.log("clicked", id );
   const filteredProducts = this.state.products.filter((p) => p.id !== id);
   this.setState({products: filteredProducts});
+  
 };
 
 
@@ -35,9 +37,13 @@ this.setState({productsList: productsList});
 
 changeHandler = (event, id) => {
 // console.log(event.target.value, id );
+const products = [...this.state.products];
+const selectedItem = products.find((p) => p.id ===id);
+selectedItem.title = event.target.value; 
+this.setState({products});
 }
 
-  render() {
+  render() { 
     return (
       <div className={styles.productlist}>
         {this.state.products.map((product) => {
@@ -50,7 +56,7 @@ changeHandler = (event, id) => {
             onDelete={() => this.removeHandler(product.id)}
             onInc={ () => this.incrementHandler(product.id)}
             onDec={ () => this.decrementHandler(product.id)}
-            onChange={ (e) => this.changeHandler(e, product.id)}
+            onChange = { (e) =>this.changeHandler(e, product.id)}
             />
           );
         })}
