@@ -28,10 +28,16 @@ this.setState({products: products})
 
 
 decrementHandler=(id) =>{
-const productsList=[...this.state.products];
-const SelectedDec = productsList.find(p => p.id ===id);
-SelectedDec.quantity--;
-this.setState({productsList: productsList});
+const products=[...this.state.products];
+const SelectedDec = products.find(p => p.id ===id);
+if(SelectedDec.quantity===1){
+const filteredProducts = products.filter((p) => p.id !== id);
+this.setState({products:filteredProducts})
+}else{
+  SelectedDec.quantity--;
+  this.setState({products});
+
+}
 }
 
 changeHandler = (event, id) => {
