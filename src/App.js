@@ -5,14 +5,58 @@ import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
   state = {
-    count: 0,
+    products: [
+      { title: "React.js", price: "$99", id: 1, quantity: 1 },
+      { title: "Node.js", price: "$89", id: 2, quantity: 2 },
+      { title: "JavaScript", price: "$79", id: 3, quantity: 3 },
+    ],
+  };
+  // Handler
+
+  removeHandler = (id) => {
+    // console.log("clicked", id );
+    const filteredProducts = this.state.products.filter((p) => p.id !== id);
+    this.setState({ products: filteredProducts });
+  };
+
+  incrementHandler = (id) => {
+    const products = [...this.state.products];
+    const foundProduct = products.find((p) => p.id === id);
+    foundProduct.quantity++;
+    this.setState({ products: products });
+  };
+
+  decrementHandler = (id) => {
+    const products = [...this.state.products];
+    const SelectedDec = products.find((p) => p.id === id);
+    if (SelectedDec.quantity === 1) {
+      const filteredProducts = products.filter((p) => p.id !== id);
+      this.setState({ products: filteredProducts });
+    } else {
+      SelectedDec.quantity--;
+      this.setState({ products });
+    }
+  };
+
+  changeHandler = (event, id) => {
+    // console.log(event.target.value, id );
+    const products = [...this.state.products];
+    const selectedItem = products.find((p) => p.id === id);
+    selectedItem.title = event.target.value;
+    this.setState({ products });
   };
 
   render() {
     return (
       <div className="container" id="title">
-        <NavBar/>
-        <ProductList />
+        <NavBar totalItems={this.state.products.filter((p) => p.quantity >0).length} />
+        <ProductList
+          products ={this.state.products}
+          onDelete={this.removeHandler}
+          onInc={this.incrementHandler}
+          onDec={this.decrementHandler}
+          onChange={this.changeHandler}
+        />
       </div>
     );
   }
