@@ -12,8 +12,8 @@ const Product = (props) => {
       <span className={styles.value}>{props.product.quantity}</span>
       <input className={styles.input} type="text" onChange={props.onChange} value={props.product.title} />
       <button onClick={props.onInc} className={`${styles.button} ${styles.inc}`}> + </button>
-      <button onClick={props.onDec} className={`${styles.button} ${styles.dec}`}> {props.product.quantity >1 ? "-" : <BiTrash/>} </button>
-      <button onClick={props.onDelete} className={styles.button}>Delete</button>
+      <button onClick={props.onDec} className={`${styles.button} ${styles.dec} ${props.product.quantity===1 && styles.remove }`}> {props.product.quantity >1 ? "-" : <BiTrash/>} </button>
+      <button onClick={props.onDelete} className={`${styles.buttondel} ${props.product.quantity===1 && styles.removedel}`}>Delete</button>
     {props.children}
     </div>
   );
