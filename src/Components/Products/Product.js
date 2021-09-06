@@ -1,5 +1,6 @@
 // import "./Product.css"
 import styles from "./Product.module.css"
+import { BiTrash } from "react-icons/bi";
 //  When we use module in css, we make sure that there won't be any bug
 
 const Product = (props) => {
@@ -11,7 +12,7 @@ const Product = (props) => {
       <span className={styles.value}>{props.product.quantity}</span>
       <input className={styles.input} type="text" onChange={props.onChange} value={props.product.title} />
       <button onClick={props.onInc} className={`${styles.button} ${styles.inc}`}> + </button>
-      <button onClick={props.onDec} className={`${styles.button} ${styles.dec}`}> - </button>
+      <button onClick={props.onDec} className={`${styles.button} ${styles.dec}`}> {props.product.quantity >1 ? "-" : <BiTrash/>} </button>
       <button onClick={props.onDelete} className={styles.button}>Delete</button>
     {props.children}
     </div>
