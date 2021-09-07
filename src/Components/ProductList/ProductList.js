@@ -8,20 +8,21 @@ class ProductList extends Component {
 
 
   renderProduct = () => {
-    if (this.props.products.length === 0)
+    const {onChange,onDec, onInc, onDelete, products}=this.props;
+    if (products.length === 0)
       return <div> There is no product in your cart </div>;
 
-    return this.props.products.map((product) => {
+    return products.map((product) => {
       return (
         <Product
           // name={product.title}
           // price={product.price}
           product={product}
           key={product.id}
-          onDelete={() => this.props.onDelete(product.id)}
-          onInc={() => this.props.onInc(product.id)}
-          onDec={() => this.props.onDec(product.id)}
-          onChange={(e) => this.props.onChange(e, product.id)}
+          onDelete={() =>onDelete(product.id)}
+          onInc={() =>onInc(product.id)}
+          onDec={() =>onDec(product.id)}
+          onChange={(e) =>onChange(e, product.id)}
         />
       );
     });
