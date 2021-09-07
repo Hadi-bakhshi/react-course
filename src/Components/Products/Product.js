@@ -3,18 +3,18 @@ import styles from "./Product.module.css"
 import { BiTrash } from "react-icons/bi";
 //  When we use module in css, we make sure that there won't be any bug
 
-const Product = (props) => {
-    // console.log(props);
+const Product = ({onChange, onDec, onDelete, onInc, product}) => {
+    // console.log(;
   return (
-    <div className={styles.product} onClick={props.click }>
-      <p> Product Name : {props.product.title} Course</p>
-      <p>Product Price : {props.product.price}</p>
-      <span className={styles.value}>{props.product.quantity}</span>
-      <input className={styles.input} type="text" onChange={props.onChange} value={props.product.title} />
-      <button onClick={props.onInc} className={`${styles.button} ${styles.inc}`}> + </button>
-      <button onClick={props.onDec} className={`${styles.button} ${styles.dec} ${props.product.quantity===1 && styles.remove }`}> {props.product.quantity >1 ? "-" : <BiTrash/>} </button>
-      <button onClick={props.onDelete} className={`${styles.buttondel} ${props.product.quantity===1 && styles.removedel}`}>Delete</button>
-    {props.children}
+    <div className={styles.product} >
+      <p> Product Name : {product.title} Course</p>
+      <p>Product Price : {product.price}</p>
+      <span className={styles.value}>{product.quantity}</span>
+      <input className={styles.input} type="text" onChange={onChange} value={product.title} />
+      <button onClick={onInc} className={`${styles.button} ${styles.inc}`}> + </button>
+      <button onClick={onDec} className={`${styles.button} ${styles.dec} ${product.quantity===1 && styles.remove }`}> {product.quantity >1 ? "-" : <BiTrash/>} </button>
+      <button onClick={onDelete} className={`${styles.buttondel} ${product.quantity===1 && styles.removedel}`}>Delete</button>
+    
     </div>
   );
 };
