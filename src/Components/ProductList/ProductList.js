@@ -29,10 +29,13 @@ class ProductList extends Component {
   };
 
   render() {
-    return <div className={styles.productlist}>
-      {!this.props.products.length && <div> Go shopping</div> }
+    const {products} = this.props;
+    return (
+      <div className={styles.productlist}>
+      {!products.length && <div> Go shopping</div> }
       {this.renderProduct()}
-      </div>;
+      </div>
+    );
   }
 }
 
