@@ -4,7 +4,7 @@ import { BiTrash } from "react-icons/bi";
 //  When we use module in css, we make sure that there won't be any bug
 
 const Product = ({onChange, onDec, onDelete, onInc, product}) => {
-    // console.log(;
+  console.log("Product.js render");
   return (
     <div className={styles.product} >
       <p> Product Name : {product.title} Course</p>

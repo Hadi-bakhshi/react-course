@@ -4,14 +4,11 @@ import styles from "./ProductList.module.css";
 
 class ProductList extends Component {
   
-
-
-
   renderProduct = () => {
     const {onChange,onDec, onInc, onDelete, products}=this.props;
     if (products.length === 0)
       return <div> There is no product in your cart </div>;
-
+      console.log("ProductList.js render");
     return products.map((product) => {
       return (
         <Product

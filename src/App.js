@@ -4,6 +4,12 @@ import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
+
+constructor(props){
+  super(props)
+  console.log("App.js constructor")
+}
+
   state = {
     products: [
       { title: "React.js", price: "$99", id: 1, quantity: 1 },
@@ -46,7 +52,12 @@ class App extends Component {
     this.setState({ products });
   };
 
+  componentDidMount() {
+    console.log("App.js componentDidMount  ")
+  }
+
   render() {
+    console.log("App.js render")
     return (
       <div className="container" id="title">
         <NavBar totalItems={this.state.products.filter((p) => p.quantity >0).length} />
