@@ -3,12 +3,18 @@ import Product from "../Products/Product";
 import styles from "./ProductList.module.css";
 
 class ProductList extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    
+    if(prevProps.products !== this.props.products){
+
+    }
+  }
   
   renderProduct = () => {
     const {onChange,onDec, onInc, onDelete, products}=this.props;
     if (products.length === 0)
       return <div> There is no product in your cart </div>;
-      console.log("ProductList.js render");
+    
     return products.map((product) => {
       return (
         <Product
@@ -26,6 +32,7 @@ class ProductList extends Component {
   };
 
   render() {
+    console.log("ProductList.js render");
     const {products} = this.props;
     return (
       <div className={styles.productlist}>

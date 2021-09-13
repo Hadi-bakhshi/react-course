@@ -26,35 +26,52 @@ constructor(props){
   };
 
   incrementHandler = (id) => {
-    const products = [...this.state.products];
-    const foundProduct = products.find((p) => p.id === id);
-    foundProduct.quantity++;
-    this.setState({ products: products });
+  const index = this.state.products.findIndex((item) => item.id === id);
+  const product ={...this.state.products[index]};
+  product.quantity++;
+  const products = [...this.state.products];
+  products[index]=product;
+  this.setState({products})
   };
 
   decrementHandler = (id) => {
-    const products = [...this.state.products];
-    const SelectedDec = products.find((p) => p.id === id);
-    if (SelectedDec.quantity === 1) {
-      const filteredProducts = products.filter((p) => p.id !== id);
-      this.setState({ products: filteredProducts });
-    } else {
-      SelectedDec.quantity--;
-      this.setState({ products });
+    const index = this.state.products.findIndex((item) => item.id ===id);
+    const product ={...this.state.products[index]};
+    if (product.quantity===1){
+      const filteredProducts = this.state.products.filter((p) => p.id !==id);
+      this.setState({products : filteredProducts});
+    } else{
+      const products =[...this.state.products];
+      product.quantity--;
+      products[index] = product;
+      this.setState({products})
     }
+
+    
+
+    
   };
 
   changeHandler = (event, id) => {
-    // console.log(event.target.value, id );
-    const products = [...this.state.products];
-    const selectedItem = products.find((p) => p.id === id);
-    selectedItem.title = event.target.value;
-    this.setState({ products });
+   const index = this.state.products.findIndex((item) => item.id === id);
+   const product = {...this.state.products[index]};
+   product.title = event.target.value;
+   const products = [...this.state.products];
+   products[index]=product;
+   this.setState({products});
   };
 
   componentDidMount() {
     console.log("App.js componentDidMount  ")
   }
+
+componentDidUpdate(prevProps, prevState) {
+  console.log("App.js componentDidUpdate");
+  console.log('App.js', prevState);
+}
+shouldComponentUpdate(nextProps, nextState) {
+  return true;
+} 
 
   render() {
     console.log("App.js render")
