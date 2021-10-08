@@ -32,7 +32,7 @@ class ProductList extends Component {
   };
 
   render() {
-    console.log("ProductList.js render");
+    
     const {products} = this.props;
     return (
       <div className={styles.productlist}>

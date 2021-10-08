@@ -5,10 +5,6 @@ import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
 
-constructor(props){
-  super(props)
-  console.log("App.js constructor")
-}
 
   state = {
     products: [
@@ -61,20 +57,11 @@ constructor(props){
    this.setState({products});
   };
 
-  componentDidMount() {
-    console.log("App.js componentDidMount  ")
-  }
+ 
 
-componentDidUpdate(prevProps, prevState) {
-  console.log("App.js componentDidUpdate");
-  console.log('App.js', prevState);
-}
-shouldComponentUpdate(nextProps, nextState) {
-  return true;
-} 
 
   render() {
-    console.log("App.js render")
+   
     return (
       <div className="container" id="title">
         <NavBar totalItems={this.state.products.filter((p) => p.quantity >0).length} />
