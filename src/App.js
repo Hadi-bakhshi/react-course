@@ -4,8 +4,6 @@ import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
-
-
   state = {
     products: [
       { title: "React.js", price: "$99", id: 1, quantity: 1 },
@@ -22,51 +20,45 @@ class App extends Component {
   };
 
   incrementHandler = (id) => {
-  const index = this.state.products.findIndex((item) => item.id === id);
-  const product ={...this.state.products[index]};
-  product.quantity++;
-  const products = [...this.state.products];
-  products[index]=product;
-  this.setState({products})
+    const index = this.state.products.findIndex((item) => item.id === id);
+    const product = { ...this.state.products[index] };
+    product.quantity++;
+    const products = [...this.state.products];
+    products[index] = product;
+    this.setState({ products });
   };
 
   decrementHandler = (id) => {
-    const index = this.state.products.findIndex((item) => item.id ===id);
-    const product ={...this.state.products[index]};
-    if (product.quantity===1){
-      const filteredProducts = this.state.products.filter((p) => p.id !==id);
-      this.setState({products : filteredProducts});
-    } else{
-      const products =[...this.state.products];
+    const index = this.state.products.findIndex((item) => item.id === id);
+    const product = { ...this.state.products[index] };
+    if (product.quantity === 1) {
+      const filteredProducts = this.state.products.filter((p) => p.id !== id);
+      this.setState({ products: filteredProducts });
+    } else {
+      const products = [...this.state.products];
       product.quantity--;
       products[index] = product;
-      this.setState({products})
+      this.setState({ products });
     }
-
-    
-
-    
   };
 
   changeHandler = (event, id) => {
-   const index = this.state.products.findIndex((item) => item.id === id);
-   const product = {...this.state.products[index]};
-   product.title = event.target.value;
-   const products = [...this.state.products];
-   products[index]=product;
-   this.setState({products});
+    const index = this.state.products.findIndex((item) => item.id === id);
+    const product = { ...this.state.products[index] };
+    product.title = event.target.value;
+    const products = [...this.state.products];
+    products[index] = product;
+    this.setState({ products });
   };
 
- 
-
-
   render() {
-   
     return (
       <div className="container" id="title">
-        <NavBar totalItems={this.state.products.filter((p) => p.quantity >0).length} />
+        <NavBar
+          totalItems={this.state.products.filter((p) => p.quantity > 0).length}
+        />
         <ProductList
-          products ={this.state.products}
+          products={this.state.products}
           onDelete={this.removeHandler}
           onInc={this.incrementHandler}
           onDec={this.decrementHandler}
