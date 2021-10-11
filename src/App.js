@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+
 import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 
@@ -10,6 +11,7 @@ class App extends Component {
       { title: "Node.js", price: "$89", id: 2, quantity: 2 },
       { title: "JavaScript", price: "$79", id: 3, quantity: 3 },
     ],
+    
   };
   // Handler
 
@@ -54,6 +56,7 @@ class App extends Component {
   render() {
     return (
       <div className="container" id="title">
+      
         <NavBar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         />
