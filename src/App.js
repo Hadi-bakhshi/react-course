@@ -4,6 +4,7 @@ import "./App.css";
 import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 import Wrapper from "./Components/hoc/Wrapper";
+import ClassRef from "./Components/ref/ClassRef";
 
 
 
@@ -59,7 +60,7 @@ class App extends Component {
   render() {
     return (
       <>
-      
+     
         <NavBar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         />
@@ -70,6 +71,7 @@ class App extends Component {
           onDec={this.decrementHandler}
           onChange={this.changeHandler}
         />
+         <ClassRef/>
       </>
     );
   }
