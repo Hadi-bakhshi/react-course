@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Wrapper from "./Components/hoc/Wrapper";
 
 
+
 class App extends Component {
   state = {
     products: [
