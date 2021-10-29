@@ -4,7 +4,7 @@ import "./App.css";
 import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 import Wrapper from "./Components/hoc/Wrapper";
-import ClassRef from "./Components/ref/ClassRef";
+
 
 
 
@@ -71,7 +71,6 @@ class App extends Component {
           onDec={this.decrementHandler}
           onChange={this.changeHandler}
         />
-         <ClassRef/>
       </>
     );
   }
