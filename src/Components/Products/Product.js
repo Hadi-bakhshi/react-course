@@ -1,17 +1,19 @@
 import styles from "./Product.module.css";
 import { BiTrash } from "react-icons/bi";
 import { useEffect } from "react";
+
 //  When we use module in css, we make sure that there won't be any bug
 
 const Product = ({ onChange, onDec, onDelete, onInc, product }) => {
-  console.log("Product.js render");
+
 
   useEffect(() => {
-    console.log("Product.js useEffect");
+    
     return () => {
-      console.log("product CWUM");
     };
   }, [ ]);
+
+
 
   return (
     <div className={styles.product}>
