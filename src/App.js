@@ -4,7 +4,7 @@ import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 import Wrapper from "./Components/hoc/Wrapper";
 import CounterProvider from "./Components/Context/CounterProvider";
-import CounterOne from "./Components/Context/CounterOne";
+import CounterComp from "./Components/Reducer/CountReducer";
 
 
 
@@ -71,10 +71,10 @@ class App extends Component {
           onDec={this.decrementHandler}
           onChange={this.changeHandler}
         />
-      {/* <CounterProvider>
+      <CounterProvider>
        <h2>Welcome to Context</h2>
-        <CounterOne />
-      </CounterProvider> */}
+      <CounterComp />
+      </CounterProvider>
         
       </>
     );

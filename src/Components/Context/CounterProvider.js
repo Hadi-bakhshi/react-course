@@ -16,8 +16,21 @@ const CounterProvider = ({ children }) => {
   );
 };
 
-
 // Export
 export default CounterProvider;
 export const useCount = () => useContext(CounterContext);
-export const useCountAction = () => useContext(CounterContextDispatcher);
+// Actions
+
+export const useCountAction = () => {
+  const setCount = useContext(CounterContextDispatcher);
+  const addOne = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+  const addSix = () => {
+    setCount((prevCount) => prevCount + 6);
+  };
+  const decrement = () => {
+    setCount((prevCount) => prevCount - 10);
+  };
+  return { addOne, addSix, decrement };
+};
