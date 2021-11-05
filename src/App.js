@@ -71,10 +71,10 @@ class App extends Component {
           onDec={this.decrementHandler}
           onChange={this.changeHandler}
         />
-      <CounterProvider>
+      {/* <CounterProvider>
        <h2>Welcome to Context</h2>
       <CounterComp />
-      </CounterProvider>
+      </CounterProvider> */}
         
       </>
     );
