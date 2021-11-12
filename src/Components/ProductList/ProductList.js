@@ -13,7 +13,7 @@ class ProductList extends Component {
   renderProduct = () => {
     const {onChange,onDec, onInc, onDelete, products}=this.props;
     if (products.length === 0)
-      return <div> There is no product in your cart </div>;
+      return <div className={styles.noproduct}> There is no product in your cart </div>;
     
     return products.map((product) => {
       return (
@@ -36,7 +36,7 @@ class ProductList extends Component {
     const {products} = this.props;
     return (
       <div className={styles.productlist}>
-      {!products.length && <div> Go shopping</div> }
+      {!products.length && <div className={styles.goshopping}> Go shopping</div> }
       {this.renderProduct()}
       </div>
     );

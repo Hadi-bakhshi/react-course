@@ -14,6 +14,7 @@ border-radius: 8px;
 .product> p {
   padding:0 6px ;
   text-align: left;
+  font-weight: 500;
 }
 .button{
   color: #6d28d9;
