@@ -3,12 +3,6 @@ import "./App.css";
 import ProductList from "./Components/ProductList/ProductList";
 import NavBar from "./Components/NavBar/NavBar";
 import Wrapper from "./Components/hoc/Wrapper";
-import CounterProvider from "./Components/Context/CounterProvider";
-import CounterComp from "./Components/Reducer/CountReducer";
-import CounterTwoComp from "./Components/Reducer/CountReducerTwo";
-import CounterOne from "./Components/Context/CounterOne";
-
-
 
 class App extends Component {
   state = {
@@ -62,8 +56,7 @@ class App extends Component {
   render() {
     return (
       <>
-
-        {/* <NavBar
+        <NavBar
           totalItems={this.state.products.filter((p) => p.quantity > 0).length}
         />
         <ProductList
@@ -72,12 +65,7 @@ class App extends Component {
           onInc={this.incrementHandler}
           onDec={this.decrementHandler}
           onChange={this.changeHandler}
-        /> */}
-      <CounterProvider>
-       <h2>Welcome to Context</h2>
-      <CounterOne/>
-      </CounterProvider>
-        
+        />
       </>
     );
   }
