@@ -2,13 +2,17 @@ import { useCount, useCountAction } from "./CounterProvider";
 
 const CounterOne = () => {
   const count = useCount();
-  const {addOne,addSix,decrement}= useCountAction();
+  const dispatch = useCountAction();
   return (
     <div>
       <h1>Count is : {count}</h1>
-      <button onClick={addOne}>Add one</button>
-      <button onClick={addSix}>Add six</button>
-      <button onClick={decrement}>decrease</button>
+      <button onClick={() => dispatch({ type: "add", value: 10 })}>
+        Add Ten
+      </button>
+      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+      <button onClick={() => dispatch({ type: "decrement", value: 10 })}>
+        decrease
+      </button>
     </div>
   );
 };
