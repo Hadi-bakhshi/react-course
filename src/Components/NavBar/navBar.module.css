@@ -1,29 +1,37 @@
-.navBar{
-    width: 100%;
-    background:#efefef;
-    /* padding-top: 15px; */
-    height:60px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navBar {
+  width: 100%;
+  background: #efefef;
+  /* padding-top: 15px; */
+  height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.navBar h2{
-    font-size: 16px;
-    color: #444;
+.navBar h2 {
+  font-size: 16px;
+  color: #444;
 }
 /* badge counter  */
 
-.navBar span{
-    margin-left: 20px;
-    display: inline-block;
-    width: 20px;
-    font-size: 14px;
-    height: 20px;
-    background-color:  #c6bdee ;
-    color: #6d28d9;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navBar span {
+  margin-left: 20px;
+  display: inline-block;
+  width: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 20px;
+  background-color: #c6bdee;
+  color: #6d28d9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 715px) {
+  .navBar {
+    padding: 10px 0;
+    height: 50px;
+  }
 }

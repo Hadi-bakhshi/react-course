@@ -1,19 +1,19 @@
 .product {
-  
-
-  border-radius: 10px;
-  padding: 20px 20px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-margin: 15px 10px;
+  padding: 16px 6px;
+  margin: 2rem 0 ;
 color: #444;
+border: 1px solid #6d28d9;
+border-radius: 8px;
+
+}
+
+.product> p {
+  padding:0 6px ;
+  text-align: left;
 }
 .button{
   color: #6d28d9;
@@ -21,7 +21,7 @@ color: #444;
   border: 1px solid #6d28d9;
   border-radius: 5px;
   outline: none;
-  padding: 5px 10px;
+  padding: 5px 6px;
   margin: 0 5px;
   cursor: pointer;
 }
@@ -32,17 +32,13 @@ color: #444;
   border: 1px solid #6d28d9;
   border-radius: 5px;
   outline: none;
-  padding: 5px 10px;
-  margin: 0 5px;
+  padding: 5px 5px;
   cursor: pointer;
 }
-.inc{
+.inc .dec{
   background-color:#ede9fe ;
 }
 
-.dec{
-  background-color:#ede9fe ;
-}
 .value{
   display: inline-block;
   width: 20px;
@@ -54,17 +50,16 @@ color: #444;
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  /* margin-right: 5px; */
-  /* margin-top: 10px; */
+  font-weight: 600;
+  margin: 0 3px;
+
 }
 .input{
   outline: none;
   border: 1px solid #6d28d9;
   border-radius: 5px;
-  padding: 5px 2px;
+  padding: 5px  0;
   color: #6d28d9;
-
-
   text-align: center;
 }
 .input:focus{
@@ -78,4 +73,15 @@ color: #444;
 
 .removedel{
   display:none;
+}
+
+@media screen and (max-width: 715px){
+  .product{
+    display: flex;
+    flex-direction: column;
+  }
+  .button{
+    margin: 5px 5px;
+    padding: 5px 20px;
+  }
 }
