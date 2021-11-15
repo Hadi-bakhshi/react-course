@@ -1,10 +1,15 @@
+import { useProducts } from "../Providers/ProductsProvider";
 import styles from "./navBar.module.css";
-const NavBar = ({totalItems}) => {
-  
-  return <header className={styles.navBar}>
+const NavBar = () => {
+  const products = useProducts();
+  const totalItems = products.filter((p) => p.quantity > 0).length;
+
+  return (
+    <header className={styles.navBar}>
       <h2>Mahtisa Shopping Center</h2>
       <span>{totalItems}</span>
-  </header>;
+    </header>
+  );
 };
 
 export default NavBar;
