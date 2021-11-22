@@ -5,8 +5,7 @@ import styles from "./ProductList.module.css";
 
 const ProductList = (props) => {
   const products = useProducts();
-  const { removeHandler, incrementHandler, decrementHandler, changeHandler } =
-    useProductsAction();
+  const dispatch = useProductsAction();
 
   const renderProduct = () => {
     if (products.length === 0)
@@ -23,10 +22,10 @@ const ProductList = (props) => {
           price={product.price}
           product={product}
           key={product.id}
-          onDelete={() => removeHandler(product.id)}
-          onInc={() => incrementHandler(product.id)}
-          onDec={() => decrementHandler(product.id)}
-          onChange={(e) => changeHandler(e, product.id)}
+          onDelete={() =>dispatch({type:'remove', id:product.id})}
+          onInc={() =>dispatch({type:'increment', id:product.id})}
+          onDec={() =>dispatch({type:'decrement', id:product.id})}
+          onChange={(e) =>dispatch({type:'edit', id:product.id, event:e})}
         ></Product>
       );
     });
