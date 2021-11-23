@@ -17,15 +17,15 @@ const Product = ({ onChange, onDec, onDelete, onInc, product }) => {
 
   return (
     <div className={styles.product}>
-      <p> Product Name : {product.title} Course</p>
-      <p>Product Price : {product.price}</p>
+      <p> Product Name : {product.title}</p>
+      <p> Price :${product.price}</p>
       <span className={styles.value}>{product.quantity}</span>
-      <input
+      {/* <input
         className={styles.input}
         type="text"
         onChange={onChange}
         value={product.title}
-      />
+      /> */}
       <button onClick={onInc} className={`${styles.button} ${styles.inc}`}>
         {" "}
         +{" "}

@@ -1,24 +1,26 @@
 .product {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  padding: 16px 6px;
-  margin: 2rem 0 ;
-color: #444;
-border: 1px solid #6d28d9;
-border-radius: 8px;
-
+  padding: 20px 17px;
+  margin: 2rem 0;
+  color: #444;
+  -webkit-border-radius: 40px;
+  border-radius:40px;
+  background: #ffffff;
+  -webkit-box-shadow: 12px 12px 24px #d1d1d1, -12px -12px 24px #ffffff;
+  box-shadow: 12px 12px 24px #d1d1d1, -12px -12px 24px #ffffff;
 }
 
-.product> p {
-  padding:0 6px ;
+.product > p {
+  padding: 0 8px;
   text-align: left;
   font-weight: 500;
 }
-.button{
+.button {
   color: #6d28d9;
-  background-color: #fff ;
+  background-color: #fff;
   border: 1px solid #6d28d9;
   border-radius: 5px;
   outline: none;
@@ -27,20 +29,20 @@ border-radius: 8px;
   cursor: pointer;
 }
 
-.buttondel{
+.buttondel {
   color: #6d28d9;
-  background-color: #fff ;
+  background-color: #fff;
   border: 1px solid #6d28d9;
   border-radius: 5px;
   outline: none;
   padding: 5px 5px;
   cursor: pointer;
 }
-.inc .dec{
-  background-color:#ede9fe ;
+.inc .dec {
+  background-color: #ede9fe;
 }
 
-.value{
+.value {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -53,35 +55,34 @@ border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   margin: 0 3px;
-
 }
-.input{
+.input {
   outline: none;
   border: 1px solid #6d28d9;
   border-radius: 5px;
-  padding: 5px  0;
+  padding: 5px 0;
   color: #6d28d9;
   text-align: center;
 }
-.input:focus{
+.input:focus {
   border: 2px solid #6d28d9;
 }
 
-.remove{
-  color:rgb(236,68,68);
-  border:1px solid rgb(236,68,68);
+.remove {
+  color: rgb(236, 68, 68);
+  border: 1px solid rgb(236, 68, 68);
 }
 
-.removedel{
-  display:none;
+.removedel {
+  display: none;
 }
 
-@media screen and (max-width: 715px){
-  .product{
+@media screen and (max-width: 715px) {
+  .product {
     display: flex;
     flex-direction: column;
   }
-  .button{
+  .button {
     margin: 5px 5px;
     padding: 5px 20px;
   }
