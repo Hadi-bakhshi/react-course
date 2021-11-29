@@ -46,6 +46,18 @@ const reducer = (state, action) => {
     case "remove":
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts;
+    case "filter": {
+      const value = action.selectedOption.value;
+      if (value === " ") {
+        return productsData;
+      } else {
+        const updatedProducts = productsData.filter(
+          (p) => p.availableSizes.indexOf(value) >= 0
+        );
+        return updatedProducts;
+      }
+    }
+
     default:
       return state;
   }

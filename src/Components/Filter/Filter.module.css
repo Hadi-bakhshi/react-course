@@ -1,0 +1,30 @@
+.filter{
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+.select{
+    width: 200px;
+}
+.filterContainer{
+display: flex;
+align-items: center;
+
+}
+.filterContainer span{
+    display: block;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 715px) {
+    .filter{
+        flex-direction: column;
+        width:20rem ;
+        margin-top: 1rem;
+    }
+    .select{
+        width: 150px;
+    }
+}

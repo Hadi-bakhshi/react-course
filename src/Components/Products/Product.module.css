@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 40rem;
   padding: 20px 17px;
   margin: 2rem 0;
   color: #444;
@@ -81,6 +81,7 @@
   .product {
     display: flex;
     flex-direction: column;
+    width: 20rem;
   }
   .button {
     margin: 5px 5px;
