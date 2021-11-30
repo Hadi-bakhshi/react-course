@@ -42,7 +42,7 @@ export const productsData = [
     quantity: 1,
     description: "trx black and white gloves",
     availableSizes: ["XXL"],
-    price: 23.1,
+    price: 35.2,
     isFreeShipping: false,
   },
   {
