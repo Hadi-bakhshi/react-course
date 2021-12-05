@@ -1,7 +1,6 @@
 import React, { useContext, useReducer } from "react";
 import { productsData } from "../../Components/db/product";
 import _ from "lodash";
-import { STATEMENT_TYPES } from "@babel/types";
 // 1- Creat context
 const ProductsContext = React.createContext();
 const ProductsContextDispatcher = React.createContext();
@@ -59,14 +58,24 @@ const reducer = (state, action) => {
         return updatedProducts;
       }
     }
-
-    case "sort":{
+    case "sort": {
       const value = action.selectedOption.value;
-      const products =[...state];
+      const products = [...state];
       if (value === "lowest") {
-        return _.orderBy(products,["price"],["asc"])
+        return _.orderBy(products, ["price"], ["asc"]);
       } else {
-        return _.orderBy(products,["price"],["desc"])
+        return _.orderBy(products, ["price"], ["desc"]);
+      }
+    }
+    case "search": {
+      const value = action.event.target.value;
+      if (value === " ") {
+        return productsData;
+      } else {
+        const SearchedItems = productsData.filter((p) =>
+          p.title.toLowerCase().includes(value.toLowerCase())
+        );
+        return SearchedItems;
       }
     }
 
