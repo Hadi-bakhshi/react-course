@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { useProductsAction } from "../Providers/ProductsProvider";
-import Select from 'react-select';
-import style from "./Filter.module.css"
+import style from "./Filter.module.css";
+import SelectComponent from "../../common/Select/Select";
 
 const options = [
-  {value:" ", label:"All"},
-  {value:"XS", label:"XS"},
-  {value:"S", label:"S"},
-  {value:"M", label:"M"},
-  {value:"L", label:"L"},
-  {value:"XL", label:"XL"},
-  {value:"XXL", label:"XXL"},
-
-]
+  { value: " ", label: "All" },
+  { value: "XS", label: "XS" },
+  { value: "S", label: "S" },
+  { value: "M", label: "M" },
+  { value: "L", label: "L" },
+  { value: "XL", label: "XL" },
+  { value: "XXL", label: "XXL" },
+];
 const sortOptions = [
-  {value:"highest", label:"Highest"},
-  {value:"lowest", label:"Lowset"},
-
-]
+  { value: "highest", label: "Highest" },
+  { value: "lowest", label: "Lowset" },
+];
 
 const Filter = () => {
   const dispatch = useProductsAction();
@@ -26,7 +24,7 @@ const Filter = () => {
 
   const changeHandler = (selectedOption) => {
     dispatch({ type: "filter", selectedOption });
-    dispatch({ type: "sort", selectedOption:sort });
+    dispatch({ type: "sort", selectedOption: sort });
     setValue(selectedOption);
   };
   const sortHandler = (selectedOption) => {
@@ -37,24 +35,18 @@ const Filter = () => {
   return (
     <div className={style.filter}>
       <p>Filter Products based on:</p>
-      <div className={style.filterContainer}>
-       <span> Size:</span>
-        <Select
+      <SelectComponent
+        title="Size"
         value={value}
         onChange={changeHandler}
         options={options}
-        className={style.select}
       />
-      </div>
-      <div className={style.filterContainer}>
-       <span> Price:</span>
-        <Select
+      <SelectComponent
+        title="Price"
         value={sort}
         onChange={sortHandler}
         options={sortOptions}
-        className={style.select}
       />
-      </div>
     </div>
   );
 };

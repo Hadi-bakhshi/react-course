@@ -1,0 +1,16 @@
+.select {
+  width: 150px;
+}
+.filterContainer {
+  display: flex;
+  align-items: center;
+}
+.filterContainer span {
+  display: block;
+  margin-right: 1rem;
+}
+@media screen and (max-width: 715px) {
+  .select {
+    width: 150px;
+  }
+}
